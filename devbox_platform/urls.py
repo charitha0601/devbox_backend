@@ -39,10 +39,10 @@ urlpatterns = [
     path('', include('devbox_api.urls')),
 
     # JWT Token
-    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('login', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
 
     # Swagger
-    path('swagger/', schema_view.with_ui('swagger'), name='schema-swagger-ui'),
-    path('redoc/', schema_view.with_ui('redoc'), name='schema-redoc'),
+    path('swagger', schema_view.with_ui('swagger'), name='schema-swagger-ui'),
+    path('redoc', schema_view.with_ui('redoc'), name='schema-redoc'),
 ]

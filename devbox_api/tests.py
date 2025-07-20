@@ -11,7 +11,7 @@ def api_client():
 
 @pytest.fixture
 def test_user(db):
-    user = User.objects.create_user(username='charitha', password='Charitha@123')
+    user = User.objects.create_user(username='devbox', password='Devbox@123')
     return user
 
 @pytest.fixture
@@ -23,7 +23,7 @@ def auth_headers(test_user):
 
 def test_login_success(api_client, test_user):
     url = reverse('token_obtain_pair')
-    data = {"username": "charitha", "password": "Charitha@123"}
+    data = {"username": "devbox", "password": "Devbox@123"}
     response = api_client.post(url, data)
     assert response.status_code == 200
     assert "access" in response.data
